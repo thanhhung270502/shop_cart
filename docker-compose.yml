@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: test_docker
+      MYSQL_USER: hungdocker
+      MYSQL_PASSWORD: 123456
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ".:/test_docker"
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - "3001:3000"
+    environment:
+      DB_USER: root
+      DB_NAME: test_docker
+      DB_PASSWORD: 123456
+      DB_HOST: db
