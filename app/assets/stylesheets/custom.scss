@@ -1,42 +1,54 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+// Color
+:root {
+    --primary: #fe2c55;
+    --black: #000;
+    --text-color: #333;
+    --blue-black: #161d27;
+    --white: #f3f3f4;
+    --yellow: #ffc174;
+
+    // Default layout
+    --default-layout-header-height: 160px;
+    --default-layout-width: 140rem;
+    --default-layout-horizontal-spacer: 24px;
+}
 
 /* universal */
 body {
     // padding-top: 60px;
 }
-section {
-    overflow: auto;
-}
-textarea {
-    resize: vertical;
-}
-.center {
-    text-align: center;
-}
-.center h1 {
-    margin-bottom: 10px;
+
+.btn {
+    a {
+        text-decoration: none !important;
+        color: var(--white);
+    }
+    &:hover {
+        a {
+            color: var(--black);
+        }
+    }
 }
 
-/* typography */
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
+.btn-submit {
+    a {
+        color: var(--black) !important;
+    }
+    &:hover {
+        a {
+            color: var(--white) !important;
+        }
+    }
 }
-h1 {
-    font-size: 3em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-h2 {
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-    color: #777;
-}
-p {
-    font-size: 1.1em;
-    line-height: 1.7em;
+
+
+.btn-outline-danger {
+    &:hover {
+        a {
+            color: var(--white);
+        }
+    }
 }
