@@ -50,10 +50,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  adapter: postgresql
-  encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV['DB_HOST'] %>
+  <<: *default
   database: test_docker_production
   username: test_docker
   password: <%= ENV["TEST_DOCKER_DATABASE_PASSWORD"] %>
